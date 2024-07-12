@@ -1,5 +1,8 @@
 import React from "react";
 import clothes from "../../assets/images/clothes.jpg";
+import { filterdProducts } from "../../features/slices/productsSlice";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const NavigateButtons = () => {
   const buttons = [
@@ -13,21 +16,30 @@ const NavigateButtons = () => {
     "Bags",
   ];
 
+  const dispatch = useDispatch();
+
   return (
     <div>
-      <div className="flex items-center justify-center py-8 space-x-4">
-        {buttons.map((button, index) => (
-          <button
-            key={index}
-            ripple="true"
-            className="text-gray-500 text-2xl mr-1 p-6 px-8 bg-transparent border border-gray-500 rounded-2xl hover:bg-green-300 duration-300 ease-in-out"
-          >
-            {button}
-          </button>
-        ))}
+      <div className="container mx-auto px-4">
+        <div className="flex flex-wrap items-center justify-center py-8 gap-4">
+          {buttons.map((button, index) => (
+            <div key={index} className="w-full sm:w-auto">
+              <Link to={"/filterdProducts/" + button}>
+                <button
+                  ripple="true"
+                  className="text-gray-900 text-2xl font-bold uppercase p-2 px-6 bg-transparent border border-gray-500 rounded-md hover:bg-green-300 duration-300 ease-in-out"
+                  onClick={() => dispatch(filterdProducts(button))}
+                >
+                  {button}
+                </button>
+              </Link>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="bg-green-300 p-2 w-[55%] mx-auto rounded-md">
-        <h3 className="text-orange-900 text-center text-lg font-inter font-bold tracking-normal leading-none">
+
+      <div className="bg-black p-2 w-[70%] mx-auto rounded-md">
+        <h3 className="text-white text-center text-lg font-inter font-bold tracking-normal leading-none">
           SALES UP TO 50%
         </h3>
       </div>
