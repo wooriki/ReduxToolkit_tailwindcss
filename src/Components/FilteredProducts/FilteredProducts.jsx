@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
-const FilterdProducts = () => {
-  const products = useSelector((state) => state.products.filterdProducts);
+const FilteredProducts = () => {
+  const products = useSelector((state) => state.products.filteredProducts);
   console.log("products", products);
   const { type } = useParams();
   console.log("params", type);
@@ -38,7 +38,7 @@ const FilterdProducts = () => {
     </div>
   );
 
-  return <div>FilterdProducts</div>;
+  return <div>FilteredProducts</div>;
 };
 
-export default FilterdProducts;
+export default FilteredProducts;

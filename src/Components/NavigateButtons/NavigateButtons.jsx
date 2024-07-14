@@ -1,6 +1,6 @@
 import React from "react";
 import clothes from "../../assets/images/clothes.jpg";
-import { filterdProducts } from "../../features/slices/productsSlice";
+import { filteredProducts } from "../../features/slices/productsSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
@@ -24,11 +24,11 @@ const NavigateButtons = () => {
         <div className="flex flex-wrap items-center justify-center py-8 gap-4">
           {buttons.map((button, index) => (
             <div key={index} className="w-full sm:w-auto">
-              <Link to={"/filterdProducts/" + button}>
+              <Link to={"/filteredProducts/" + button}>
                 <button
                   ripple="true"
                   className="text-gray-900 text-2xl font-bold uppercase p-2 px-6 bg-transparent border border-gray-500 rounded-md hover:bg-green-300 duration-300 ease-in-out"
-                  onClick={() => dispatch(filterdProducts(button))}
+                  onClick={() => dispatch(filteredProducts(button))}
                 >
                   {button}
                 </button>
