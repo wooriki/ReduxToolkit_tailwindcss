@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import Cart from "../Cart/Cart";
 import { useSelector, useDispatch } from "react-redux";
