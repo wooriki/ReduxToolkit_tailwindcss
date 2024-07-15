@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import logo from "../../assets/images/logo.png";
 import Cart from "../Cart/Cart";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../features/slices/authSlice";
 
 const Navbar = () => {
   const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const user = useSelector((state) => state.user.user);
+  const { name, image } = user;
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
+
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -21,9 +26,6 @@ const Navbar = () => {
           <img className="h-28 w-full" src={logo} alt="store" />
         </div>
         <div className="flex flex-row items-center">
-          <button className="font-inter text-base font-medium tracking-normal leading-none text-center mr-4">
-            Logout
-          </button>
           <div className="flex flex-row items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -71,6 +73,22 @@ const Navbar = () => {
             <p className="font-inter text-base font-medium tracking-normal leading-none text-center">
               Shopping Bag
             </p>
+          </div>
+          <div className="flex flex-row items-center cursor-pointer pl-4">
+            {image && (
+              <img
+                src={image}
+                alt="avatar"
+                className="rounded-full w-8 h-8 mr-2"
+              />
+            )}
+            <div onClick={() => dispatch(logout())}>
+              <div className="tooltip tooltip-bottom" data-tip="Log Out">
+                <p className="font-inter text-sm font-medium tracking-normal leading-none">
+                  Hi {name.charAt(0).toUpperCase() + name.slice(1)}
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
