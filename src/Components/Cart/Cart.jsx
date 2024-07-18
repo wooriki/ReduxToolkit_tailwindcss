@@ -11,13 +11,11 @@ const Cart = ({ openModal, setOpen }) => {
   const handleClose = () => {
     setOpen(false);
   };
-
   const handleClickOutside = (event) => {
     if (modalRef.current && !modalRef.current.contains(event.target)) {
       handleClose();
     }
   };
-
   useEffect(() => {
     if (openModal) {
       document.addEventListener("mousedown", handleClickOutside);
@@ -114,7 +112,6 @@ const Cart = ({ openModal, setOpen }) => {
               </p>
             </div>
           </div>
-          <div className="modal-backdrop" onClick={handleClose}></div>
         </div>
       )}
     </div>

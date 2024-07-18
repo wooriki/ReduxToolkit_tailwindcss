@@ -9,9 +9,7 @@ import { sliderData } from "../../assets/data/dummyData";
 
 const Slider = () => {
   const slideIndex = useSelector((state) => state.slider.value);
-  console.log(slideIndex);
   const dispatch = useDispatch();
-
   return (
     <div className="relative pb-4">
       <div>
@@ -27,7 +25,11 @@ const Slider = () => {
             >
               <div>
                 {parseInt(item.id) === slideIndex && (
-                  <img className="h-[850px] w-full" src={item.img} alt="shoe" />
+                  <img
+                    className="h-[850px] w-full"
+                    src={item.img}
+                    alt="shoes"
+                  />
                 )}
               </div>
               <div className="absolute top-44 mx-auto inset-x-1/4">

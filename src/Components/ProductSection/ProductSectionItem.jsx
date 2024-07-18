@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/slices/cartSlice";
-import { Link, useParams } from "react-router-dom";
 
 const ProductSectionItem = ({
   id,
