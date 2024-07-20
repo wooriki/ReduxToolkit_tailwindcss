@@ -11,7 +11,7 @@ const ProductSection = () => {
         </h2>
       </div>
       <div className="grid grid-cols-3 justify-items-center py-12 gap-8 mx-auto max-w-7xl">
-        {storeData.slice(0, 6).map((product, index) => {
+        {storeData.slice(12, 21).map((product, index) => {
           return (
             <div key={index}>
               <ProductSectionItem

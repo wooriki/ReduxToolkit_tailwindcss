@@ -82,7 +82,7 @@ const FilteredProducts = () => {
                   className={`btn btn-outline btn-gray m-1 ${
                     type === "Bags" || type === "Shoes" ? "btn-disabled" : ""
                   }`}
-                  disable={type === "Bags"}
+                  disabled={type === "Bags" || type === "Shoes"}
                 >
                   Select a size
                 </label>

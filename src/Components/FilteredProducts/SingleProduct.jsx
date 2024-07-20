@@ -117,7 +117,7 @@ const SingleProduct = () => {
                   <div className="tooltip" data-tip="Add to Cart">
                     <button
                       className="btn btn-outline btn-gray-900 hover:bg-blue-500 hover:text-white"
-                      onClick={() =>
+                      onClick={() => {
                         dispatch(
                           addToCart({
                             id: item.id,
@@ -130,8 +130,11 @@ const SingleProduct = () => {
                             amount: 1,
                             totalPrice: item.price,
                           })
-                        )
-                      }
+                        );
+                        alert(
+                          `Added to cart! \n${item.name} \nSize: ${size}\nColor: ${color}`
+                        );
+                      }}
                     >
                       Add to Cart
                     </button>

@@ -15,7 +15,7 @@ const Error = () => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth="2"
+                strokeWidth="3"
                 d="M18.364 5.636l-12.728 12.728M5.636 5.636l12.728 12.728"
               />
             </svg>

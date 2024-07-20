@@ -27,7 +27,7 @@ const ProductSectionItem = ({
         src={img}
         alt="Man looking at item at a store"
       />
-      <div className="p-8">
+      <div className="p-8 ">
         <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
           {name}
         </div>
