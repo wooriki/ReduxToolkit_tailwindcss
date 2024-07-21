@@ -87,7 +87,12 @@ const Cart = ({ openModal, setOpen }) => {
                       </p>
                       <div className="mt-4">
                         <button
-                          onClick={() => dispatch(removeFromCart(item))}
+                          onClick={() =>
+                            dispatch(
+                              removeFromCart(item),
+                              alert(`Removed 1 of ${item.name} from cart`)
+                            )
+                          }
                           className="btn btn-sm btn-outline btn-error"
                         >
                           Remove

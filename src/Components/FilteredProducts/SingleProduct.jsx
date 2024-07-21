@@ -132,7 +132,9 @@ const SingleProduct = () => {
                           })
                         );
                         alert(
-                          `Added to cart! \n${item.name} \nSize: ${size}\nColor: ${color}`
+                          `${item.name} added to cart!\nSize: ${size}\nColor: ${
+                            color.charAt(0).toUpperCase() + color.slice(1)
+                          }`
                         );
                       }}
                     >
